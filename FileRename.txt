@@ -1,0 +1,37 @@
+package FileLearning;
+
+import java.io.File;
+import java.io.IOException;
+
+public class Renamefile {
+
+	public static void main(String[] args) {
+		
+		File f=new File("C:\\Users\\akas2779\\Desktop\\AK-KICK\\AKASH\\javamaterial5432.txt");
+		
+		 //checks whether file is available
+		boolean fileiruka=f.exists(); 
+		System.out.println("file availble : " +fileiruka);
+		
+		//if file does n't exist .....create a file
+		
+		if(fileiruka==false)
+		{
+			try {
+				boolean created=f.createNewFile();
+				
+				System.out.println("file created : " +created);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		//rename this file
+		
+		File renum= new File ("C:\\Users\\akas2779\\Desktop\\AK-KICK\\AKASH\\javamaterial5423.txt");
+		f.renameTo(renum);
+		
+		System.out.println("file renamed");
+		
+	}
+
+}
